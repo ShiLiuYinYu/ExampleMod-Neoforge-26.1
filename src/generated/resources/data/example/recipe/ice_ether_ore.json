@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "example:raw_ice_ether",
+    "minecraft:stone"
+  ],
+  "result": {
+    "id": "example:ice_ether_ore"
+  }
+}

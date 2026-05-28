@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "example:item/frost_bee_spawn_egg"
+  }
+}

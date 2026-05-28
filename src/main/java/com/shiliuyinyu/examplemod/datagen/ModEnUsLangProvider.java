@@ -1,0 +1,73 @@
+package com.shiliuyinyu.examplemod.datagen;
+
+import com.shiliuyinyu.examplemod.ExampleMod;
+import com.shiliuyinyu.examplemod.block.ModBlocks;
+import com.shiliuyinyu.examplemod.entity.ModEntities;
+import com.shiliuyinyu.examplemod.item.ModItems;
+import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+
+public class ModEnUsLangProvider extends LanguageProvider {
+    public ModEnUsLangProvider(PackOutput output) {
+        super(output, ExampleMod.MOD_ID, "en_us");
+    }
+
+    @Override
+    protected void addTranslations() {
+        add(ModItems.ICE_ETHER.get(), "Ice Ether");
+        add(ModItems.RAW_ICE_ETHER.get(), "Raw Ice Ether");
+        add(ModItems.CARDBOARD.get(), "Cardboard");
+
+        add(ModItems.STRAWBERRY.get(), "Strawberry");
+        add(ModItems.CHEESE.get(), "Cheese");
+        add(ModItems.CORN.get(), "Corn");
+
+        add(ModItems.ANTHRACITE.get(), "Anthracite");
+        add(ModItems.ANTHRACITE2.get(), "Anthracite2");
+
+        add(ModItems.PROSPECTOR.get(), "Prospector");
+
+        add(ModBlocks.ICE_ETHER_BLOCK.get(), "Ice Ether Block");
+        add(ModBlocks.RAW_ICE_ETHER_BLOCK.get(), "Raw Ice Ether Block");
+        add(ModBlocks.ICE_ETHER_ORE.get(), "Ice Ether Ore");
+
+        add(ModBlocks.ICE_ETHER_STAIRS.get(), "Ice Ether Stairs");
+        add(ModBlocks.ICE_ETHER_SLAB.get(), "Ice Ether Slab");
+        add(ModBlocks.ICE_ETHER_BUTTON.get(), "Ice Ether Button");
+        add(ModBlocks.ICE_ETHER_PRESSURE_PLATE.get(), "Ice Ether Pressure Plate");
+        add(ModBlocks.ICE_ETHER_WALL.get(), "Ice Ether Wall");
+        add(ModBlocks.ICE_ETHER_FENCE.get(), "Ice Ether Fence");
+        add(ModBlocks.ICE_ETHER_FENCE_GATE.get(), "Ice Ether Fence Gate");
+        add(ModBlocks.ICE_ETHER_DOOR.get(), "Ice Ether Door");
+        add(ModBlocks.ICE_ETHER_TRAPDOOR.get(), "Ice Ether Trapdoor");
+
+        add(ModItems.FIRE_ETHER.get(), "Fire Ether");
+        add(ModItems.FIRE_ETHER_SWORD.get(), "Fire Ether Sword");
+        add(ModItems.FIRE_ETHER_AXE.get(), "Fire Ether Axe");
+        add(ModItems.FIRE_ETHER_PICKAXE.get(), "Fire Ether Pickaxe");
+        add(ModItems.FIRE_ETHER_SHOVEL.get(), "Fire Ether Shovel");
+        add(ModItems.FIRE_ETHER_HOE.get(), "Fire Ether Hoe");
+
+        add(ModItems.PICKAXE_AXE_ITEM.get(), "Pickaxe Axe Item");
+        add(ModItems.PICKAXE_AXE_ITEM2.get(), "Pickaxe Axe Item2");
+
+        add(ModItems.ICE_ETHER_HELMET.get(), "Ice Ether Helmet");
+        add(ModItems.ICE_ETHER_CHESTPLATE.get(), "Ice Ether Chestplate");
+        add(ModItems.ICE_ETHER_LEGGINGS.get(), "Ice Ether Leggings");
+        add(ModItems.ICE_ETHER_BOOTS.get(), "Ice Ether Boots");
+
+        add(ModItems.STRAWBERRY_SEEDS.get(), "Strawberry Seeds");
+
+        add("itemGroup.example", "Example Mod");
+
+        add(ModEntities.FROST_SPIRIT.get(), "Frost Spirit");
+        add(ModItems.FROST_SPIRIT_SPAWN_EGG.get(), "Frost Spirit Spawn Egg");
+
+        add(ModEntities.FROST_BEE.get(), "Frost Bee");
+        add(ModItems.FROST_BEE_SPAWN_EGG.get(), "Frost Bee Spawn Egg");
+
+        add("tooltip.example.pickaxe_axe_item.shift", "This is a pickaxe axe item");
+        add("tooltip.example.pickaxe_axe_item", "Press  §nSHIFT§r for more info");
+
+    }
+}

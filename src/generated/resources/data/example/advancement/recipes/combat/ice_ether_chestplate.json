@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ice_ether": {
+      "conditions": {
+        "items": [
+          {
+            "items": "example:ice_ether"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "example:ice_ether_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ice_ether"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "example:ice_ether_chestplate"
+    ]
+  }
+}

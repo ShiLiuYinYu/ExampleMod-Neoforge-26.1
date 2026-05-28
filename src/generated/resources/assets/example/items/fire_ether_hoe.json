@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "example:item/fire_ether_hoe"
+  }
+}

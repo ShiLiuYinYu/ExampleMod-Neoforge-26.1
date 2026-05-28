@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_beetroot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#example:sugar_tag"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "example:sugar_from_mod_sugar_tag"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_beetroot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "example:sugar_from_mod_sugar_tag"
+    ]
+  }
+}

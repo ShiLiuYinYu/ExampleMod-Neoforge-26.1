@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "example:item/frost_spirit_spawn_egg"
+  }
+}

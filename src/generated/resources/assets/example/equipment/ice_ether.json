@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "example:ice_ether"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "example:ice_ether"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "example:ice_ether"
+      }
+    ]
+  }
+}
