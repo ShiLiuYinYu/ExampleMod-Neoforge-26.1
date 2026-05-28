@@ -1,8 +1,11 @@
 package com.shiliuyinyu.examplemod.entity.monster;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -15,6 +18,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 
 /**
  * 冰霜精灵 —— 浮空冰系敌对生物。
@@ -89,5 +93,15 @@ public class FrostSpiritEntity extends Monster {
     @Override
     public boolean causeFallDamage(double fallDistance, float damageModifier, DamageSource damageSource) {
         return false;
+    }
+
+    /**
+     * FrostSpirit 生成规则谓词：仅允许在寒冷群系（温度 &lt; 0.25）且满足原版怪物生成光照条件时生成。
+     * 参考 {@link Monster#checkMonsterSpawnRules}。
+     */
+    public static boolean checkSpawnRules(EntityType<FrostSpiritEntity> type, ServerLevelAccessor level,
+                                                      EntitySpawnReason reason, BlockPos pos, RandomSource random) {
+        return level.getBiome(pos).value().getBaseTemperature() < 0.25F
+                && Monster.checkMonsterSpawnRules(type, level, reason, pos, random);
     }
 }

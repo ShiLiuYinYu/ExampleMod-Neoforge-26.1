@@ -2,6 +2,7 @@ package com.shiliuyinyu.examplemod;
 
 import com.shiliuyinyu.examplemod.block.ModBlocks;
 import com.shiliuyinyu.examplemod.entity.ModEntities;
+import com.shiliuyinyu.examplemod.entity.spawner.ModSpawners;
 import com.shiliuyinyu.examplemod.item.ModCreativeModeTabs;
 import com.shiliuyinyu.examplemod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -48,6 +49,9 @@ public class ExampleMod {
         // 注意：仅当需要 *本类* (ExampleMod) 直接响应事件时才需要这行。
         // 如果本类中没有 @SubscribeEvent 注解的方法（如下方的 onServerStarting()），请删除这行。
         NeoForge.EVENT_BUS.register(this);
+
+        // 注册自定义生物生成器 —— 在 ServerLevel 初始化时将 FrostSpiritSpawner 和 FrostBeeSpawner 注入世界
+        NeoForge.EVENT_BUS.addListener(ModSpawners::onModifyCustomSpawners);
 
         // 向创造模式物品栏注册物品
         modEventBus.addListener(this::addCreative);

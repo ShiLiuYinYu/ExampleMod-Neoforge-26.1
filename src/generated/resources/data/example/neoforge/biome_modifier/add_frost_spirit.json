@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#c:is_cold/overworld",
+  "spawners": {
+    "type": "example:frost_spirit",
+    "maxCount": 3,
+    "minCount": 1,
+    "weight": 80
+  }
+}

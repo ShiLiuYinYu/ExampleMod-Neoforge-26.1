@@ -1,11 +1,14 @@
 package com.shiliuyinyu.examplemod.entity.monster;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -23,6 +26,7 @@ import net.minecraft.world.entity.animal.FlyingAnimal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.server.level.ServerLevel;
 
@@ -134,5 +138,15 @@ public class FrostBeeEntity extends Monster implements FlyingAnimal {
     @Override
     public boolean causeFallDamage(double fallDistance, float damageModifier, DamageSource damageSource) {
         return false;
+    }
+
+    /**
+     * FrostBee 生成规则谓词：仅允许在寒冷群系（温度 &lt; 0.35）且满足原版怪物生成条件（不含光照限制）时生成。
+     * 参考 {@link Monster#checkAnyLightMonsterSpawnRules}。
+     */
+    public static boolean checkSpawnRules(EntityType<FrostBeeEntity> type, ServerLevelAccessor level,
+                                                   EntitySpawnReason reason, BlockPos pos, RandomSource random) {
+        return level.getBiome(pos).value().getBaseTemperature() < 0.35F
+                && Monster.checkAnyLightMonsterSpawnRules(type, level, reason, pos, random);
     }
 }
