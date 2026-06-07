@@ -95,7 +95,7 @@ event.register(
 
 ### 第 3 步：生成 Biome Modifier JSON（数据生成）
 
-`ModBiomeModifiers` 类内部构造一个 `RegistrySetBuilder`，定义群系修饰器：
+`ModBiomeModifiersProvider` 类内部构造一个 `RegistrySetBuilder`，定义群系修饰器：
 
 ```java
 // ModBiomeModifiersProvider.java
