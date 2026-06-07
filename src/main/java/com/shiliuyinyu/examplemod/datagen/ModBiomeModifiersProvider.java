@@ -38,7 +38,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
  *
  * @see BiomeModifiers.AddSpawnsBiomeModifier
  */
-public final class ModBiomeModifiersProvider {
+public class ModBiomeModifiersProvider {
 
     /** 寒冷主世界群系标签 —— 积雪平原、冰刺之地、积雪针叶林、冻洋等 */
     private static final TagKey<Biome> COLD_OVERWORLD = TagKey.create(
